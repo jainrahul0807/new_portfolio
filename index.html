@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahul Jain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="static/favicon.ico" />
+    <meta name="description" content="Rahul Jain - AI/ML Enthusiast, Python Developer, and Software Engineer Portfolio" />
+    <meta name="theme-color" content="#18181b" />
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <!-- Animation & Particle Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+<!-- Removed SVG Sprite for Skill Icons, now using Iconify Simple Icons -->
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-surface fixed-top shadow-sm border-bottom border-dark">
+
+      <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <!-- <img src="static/favicon.ico" alt="Logo" width="32" height="32" class="me-2" /> -->
+          <span class="fw-bold fs-5">Rahul.</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0 gap-2">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+              <ul class="dropdown-menu bg-surface border-0" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item text-white" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal" data-tab="aboutme">About Me</a></li>
+                <li><a class="dropdown-item text-white" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal" data-tab="educationtab">Education</a></li>
+                <li><a class="dropdown-item text-white" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal" data-tab="certificationstab">Certifications</a></li>
+                <li><a class="dropdown-item text-white" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal" data-tab="nav-achievements">Achievements</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+<!-----------------------------Home---------------------------------------->
+    
+    <main class="pt-5">
+      <!-- Home Section -->
+      <section id="home" class="home-bg min-h-screen d-flex flex-column justify-content-center align-items-center text-center gap-4 px-3 position-relative overflow-hidden" data-aos="fade-up">
+        <div class="home-spacer"></div>
+        <div id="tsparticles"></div>
+        <h1 class="display-3 fw-bold">Rahul Jain</h1>
+        <div class="fs-3 fw-medium" style="height:2.5rem">
+          <span id="typing-text" class="text-primary"></span>
+        </div>
+        <p class="lead text-secondary mx-auto" style="max-width: 600px;">
+          Welcome! I am an <span class="accent">AI/ML enthusiast</span> and recent <span class="accent">Computer Science graduate</span> actively seeking full-time opportunities. I love building <span class="accent">smart solutions</span> using <span class="accent">Python</span>, <span class="accent">Flask</span>, and modern technologies.
+        </p>
+        <div class="d-flex gap-3 justify-content-center">
+          <a href="static\Rahul_Jain_Resume (3).pdf" class="btn btn-primary btn-lg shadow" download>Download Resume</a>
+          <a href="#contact" class="btn btn-outline-primary btn-lg">Contact Me</a>
+        </div>
+        <div class="d-flex gap-4 justify-content-center mt-3">
+          <a href="hhttps://github.com/jainrahul0807" target="_blank" aria-label="GitHub" class="text-primary fs-4 social-icon"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/rahul-jain-92222a232" target="_blank" aria-label="LinkedIn" class="text-primary fs-4 social-icon"><i class="bi bi-linkedin"></i></a>
+          <a href="mailto:jainrahul0807@gmail.com?subject = Feedback" aria-label="Gmail" class="text-primary fs-4 social-icon"><i class="bi bi-envelope"></i></a>
+        </div>
+        <!-- SVG Wave Divider -->
+        <svg class="svg-divider" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#23232b" fill-opacity="1" d="M0,0 C480,60 960,0 1440,60 L1440,60 L0,60 Z"></path></svg>
+      </section>
+
+<!-----------------------------Navbar-------------------------------------->
+
+      <!-- About Modal Trigger (Navbar) -->
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const aboutLink = document.querySelector('a[href="#about"]');
+        if (aboutLink) {
+          aboutLink.setAttribute('data-bs-toggle', 'modal');
+          aboutLink.setAttribute('data-bs-target', '#aboutModal');
+          aboutLink.setAttribute('href', '#');
+        }
+      });
+      </script>
+      <!-- About Modal -->
+      <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content bg-surface text-white border-0">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="aboutModalLabel"><i class="bi bi-person-circle"></i> About</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <nav class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" type="button" role="tab" aria-controls="nav-about" aria-selected="true">About Me</button>
+                <button class="nav-link" id="nav-education-tab" data-bs-toggle="tab" data-bs-target="#nav-education" type="button" role="tab" aria-controls="nav-education" aria-selected="false">Education</button>
+                <button class="nav-link" id="nav-certifications-tab" data-bs-toggle="tab" data-bs-target="#nav-certifications" type="button" role="tab" aria-controls="nav-certifications" aria-selected="false">Certifications</button>
+                <button class="nav-link" id="nav-achievements-tab" data-bs-toggle="tab" data-bs-target="#nav-achievements" type="button" role="tab" aria-controls="nav-achievements" aria-selected="false">Achievements</button>
+              </nav>
+              <div class="tab-content p-3" id="nav-tabContent">
+
+<!-----------------------------About Me------------------------------------>
+
+                <!-- About Me Tab -->
+                <div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                  <div class="d-flex flex-column flex-md-row align-items-center gap-4 mb-4">
+                    <img src="static\photo.jpg" alt="Rahul Jain" class="rounded-full shadow-lg border-primary border-4 mb-3 mb-md-0" width="120" height="120" />
+                    <div>
+                      <h3 class="fw-bold mb-2 fs-4">About Me</h3>
+                      <p class="fs-5 text-secondary mb-0">I am a self-motivated and detail-oriented Computer Science graduate with a passion for AI, Machine Learning, and building smart, scalable solutions using Python, Flask, and modern tools. I thrive on solving real-world problems and am actively seeking full-time opportunities to contribute and grow as a Software Engineer.</p>
+                    </div>
+                  </div>
+                </div>
+
+<!-----------------------------Education----------------------------------->
+
+                <!-- Education Tab -->
+                <div class="tab-pane fade" id="nav-education" role="tabpanel" aria-labelledby="nav-education-tab">
+                  <div class="row g-4 justify-content-center">
+                    <div class="col-md-4">
+                      <div class="bg-surface rounded-4 shadow-lg p-4 text-center">
+                        <i class="bi bi-mortarboard text-primary fs-1 mb-2"></i>
+                        <h5 class="fw-semibold mb-1">B.Tech | Computer Science and Engineering</h5>
+                        <div class="text-secondary">Medicaps University, Indore</div>
+                        <div class="small text-white">2021 - 2025</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-surface rounded-4 shadow-lg p-4 text-center">
+                        <i class="bi bi-book text-primary fs-1 mb-2"></i>
+                        <h6 class="fw-semibold mb-1">12th (CBSE) | PCM </h6>
+                        <div class="text-secondary">Morning Star High School, Ratlam</div>
+                        <div class="small text-white">2020 - 2021</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-surface rounded-4 shadow-lg p-4 text-center">
+                        <i class="bi bi-book text-primary fs-1 mb-2"></i>
+                        <h6 class="fw-semibold mb-1">10th (CBSE)</h6>
+                        <div class="text-secondary">St. Joseph Convent Sr. Sec. School, Ratlam </div>
+                        <div class="small text-white">2018 - 2019</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+<!----------------------------Certifications------------------------------->
+
+                <!-- Certifications Tab -->
+                <div class="tab-pane fade" id="nav-certifications" role="tabpanel" aria-labelledby="nav-certifications-tab">
+                  <div id="certifications-list" class="row g-3">
+                    <!-- Certifications will be rendered here by JS -->
+                  </div>
+                </div>
+
+<!-----------------------------Achievements-------------------------------->
+
+                <!-- Achievements Tab -->
+                <div class="tab-pane fade" id="nav-achievements" role="tabpanel" aria-labelledby="nav-achievements-tab">
+                  <div id="achievements-list" class="row g-3">
+                    <!-- Achievements will be rendered here by JS -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End About Modal -->
+
+<!------------------------------skills------------------------------------->
+
+      <!-- Skills Section -->
+      <section id="skills" class="container-xl py-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-4 text-center fs-2"><i class="bi bi-lightbulb"></i> Skills</h2>
+        <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:python"></span></span>
+            <div>Python</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:flask"></span></span>
+            <div>Flask</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:tensorflow"></span></span>
+            <div>TensorFlow</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:mysql"></span></span>
+            <div>SQL</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:html5"></span></span>
+            <div>HTML5</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:css3"></span></span>
+            <div>CSS3</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:django"></span></span>
+            <div>Django</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:streamlit"></span></span>
+            <div>Streamlit</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:javascript"></span></span>
+            <div>JavaScript</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:mongodb"></span></span>
+            <div>MongoDB</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:git"></span></span>
+            <div>Git</div>
+          </div>
+          <div class="col skill-card text-center">
+            <span class="skill-icon-bg"><span class="iconify skill-icon" data-icon="simple-icons:scikitlearn"></span></span>
+            <div>Scikit-learn</div>
+          </div>
+        </div>
+      </section>
+
+<!----------------------- What I'm Learning Section------------------------>
+
+      <!-- What I'm Learning Section -->
+      <section id="learning" class="container-xl py-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-4 text-center fs-2"><i class="bi bi-compass"></i> What I'm Learning</h2>
+        <div class="row g-4 justify-content-center" id="learning-list">
+          <!-- Learning items will be rendered here by JS -->
+        </div>
+      </section>
+
+<!-----------------------------Experience---------------------------------->
+
+      <!-- Experience Section -->
+      <section id="experience" class="container-xl py-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-5 text-center fs-2"><i class="bi bi-briefcase"></i> Experience</h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6">
+            <div class="bg-surface rounded-4 shadow-lg p-4 text-center" tabindex="0">
+              <i class="bi bi-briefcase-fill text-primary fs-1 mb-2"></i>
+              <h5 class="fw-semibold mb-1">AI/ML Intern</h5>
+              <div class="text-secondary">Quest Digiflex Pvt. Ltd.</div>
+              <div class="small text-white">Feb. 2025 - May 2025</div>
+              <p class="mt-3 mb-0">Worked on developing and implementing machine learning models for predictive analysis and data-driven insights.</p>
+            </div>
+          </div>
+          <!-- Add more experience cards here as needed -->
+        </div>
+      </section>
+
+<!-----------------------------Projects------------------------------------>
+    
+      <!-- Projects Section -->
+      <section id="projects" class="container-xl py-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-4 text-center fs-2"><i class="bi bi-folder2-open"></i> Projects</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="bg-surface rounded-4 shadow-lg p-4 h-100 project-card position-relative">
+              <img src="static\work-1.jpg" alt="Airline Satisfaction Prediction" class="img-fluid rounded mb-3" style="max-height:180px;object-fit:cover;width:100%;" />
+              <h5 class="fw-semibold text-primary mb-2">Airline Satisfaction Prediction</h5>
+              <p class="text-secondary">A machine learning model to predict airline passenger satisfaction using real-world data and advanced analytics.</p>
+              <div class="mb-3">
+                <span class="badge-tech">Python</span>
+                <span class="badge-tech">Pandas</span>
+                <span class="badge-tech">Scikit-learn</span>
+                <span class="badge-tech">Matplotlib</span>
+                <span class="badge-tech">Flask</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a href="https://github.com/jainrahul0807/airline-satisfaction" target="_blank" class="btn btn-outline-primary btn-sm">View Code <i class="bi bi-box-arrow-up-right"></i></a>
+                <a href="#" target="_blank" class="btn btn-primary btn-sm">Live Demo <i class="bi bi-play-circle"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-surface rounded-4 shadow-lg p-4 h-100 project-card position-relative">
+              <img src="static\work-2.jpg" alt="Video Game Sales Prediction" class="img-fluid rounded mb-3" style="max-height:180px;object-fit:cover;width:100%;" />
+              <h5 class="fw-semibold text-primary mb-2">Video Game Sales Prediction</h5>
+              <p class="text-secondary">Predicting video game sales using regression models and data visualization techniques.</p>
+              <div class="mb-3">
+                <span class="badge-tech">Python</span>
+                <span class="badge-tech">Pandas</span>
+                <span class="badge-tech">Matplotlib</span>
+                <span class="badge-tech">Flask</span>
+                <span class="badge-tech">Scikit-learn</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a href="https://github.com/jainrahul0807/video-games_sales" target="_blank" class="btn btn-outline-primary btn-sm">View Code <i class="bi bi-box-arrow-up-right"></i></a>
+                <a href="#" target="_blank" class="btn btn-primary btn-sm">Live Demo <i class="bi bi-play-circle"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-surface rounded-4 shadow-lg p-4 h-100 project-card position-relative">
+              <img src="static\work-3.jpg" alt="Fashion Try-On System" class="img-fluid rounded mb-3" style="max-height:180px;object-fit:cover;width:100%;" />
+              <h5 class="fw-semibold text-primary mb-2">Fashion Try-On System</h5>
+              <p class="text-secondary">A virtual try-on system leveraging computer vision and deep learning for fashion e-commerce.</p>
+              <div class="mb-3">
+                <span class="badge-tech">Python</span>
+                <span class="badge-tech">TensorFlow</span>
+                <span class="badge-tech">OpenCV</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a href="https://github.com/rahuljain-ai/fashion-tryon" target="_blank" class="btn btn-outline-primary btn-sm">View Code <i class="bi bi-box-arrow-up-right"></i></a>
+                <a href="#" target="_blank" class="btn btn-primary btn-sm">Live Demo <i class="bi bi-play-circle"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-surface rounded-4 shadow-lg p-4 h-100 project-card position-relative">
+              <img src="static\work-4.jpeg" alt="Smart Diet Planner" class="img-fluid rounded mb-3" style="max-height:180px;object-fit:cover;width:100%;" />
+              <h5 class="fw-semibold text-primary mb-2">Smart Diet Planner</h5>
+              <p class="text-secondary">A smart diet planning app that recommends personalized meal plans using AI and nutrition data.</p>
+              <div class="mb-3">
+                <span class="badge-tech">Python</span>
+                <span class="badge-tech">Flask</span>
+                <span class="badge-tech">MongoDB</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a href="https://github.com/rahuljain-ai/smart-diet-planner" target="_blank" class="btn btn-outline-primary btn-sm">View Code <i class="bi bi-box-arrow-up-right"></i></a>
+                <a href="#" target="_blank" class="btn btn-primary btn-sm">Live Demo <i class="bi bi-play-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- All Projects Button -->
+        <div class="text-center mt-5">
+          <a href="https://github.com/jainrahul0807?tab=repositories" target="_blank" class="btn btn-primary btn-lg shadow">
+            View All Projects <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </section>
+
+<!-----------------------------Contact----------------------------------->
+
+      <!-- Contact Section -->
+      <section id="contact" class="container-xl py-5" data-aos="fade-up">
+        <h2 class="fw-bold mb-4 text-center fs-2"><i class="bi bi-envelope"></i> Contact Me</h2>
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="bg-surface rounded-4 shadow-lg p-5 mx-auto" style="max-width: 600px;">
+          <input type="hidden" name="access_key" value="9c6165e2-efb9-4a04-89ba-8295407eefaf" />
+          <div class="floating-label-group">
+            <input type="text" name="name" id="name" class="form-control" placeholder="Name" required />
+            <label for="name"><i class="bi bi-person"></i></label>
+          </div>
+          <div class="floating-label-group">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required />
+            <label for="email"><i class="bi bi-envelope"></i></label>
+          </div>
+          <div class="floating-label-group">
+            <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required />
+            <label for="subject"><i class="bi bi-chat-left-text"></i></label>
+          </div>
+          <div class="floating-label-group">
+            <textarea name="message" id="message" class="form-control" placeholder="Message" rows="4" required></textarea>
+            <label for="message"><i class="bi bi-pencil"></i></label>
+          </div>
+          <div class="mt-4 text-center">
+            <button type="submit" class="btn btn-primary btn-lg shadow">Send Message</button>
+          </div>
+          <div id="form-success" class="success-message" style="display:none;">Thank you! Your message has been sent.</div>
+        </form>
+      </section>
+    </main>
+
+<!-----------------------------Footer------------------------------------->
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top" style="display:none;"><i class="bi bi-arrow-up"></i></button>
+
+    <footer class="py-4 text-center footer-glass mt-5">
+      Copywrite &copy; 2024 <span class="text-primary">Rahul Jain</span>.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 900, offset: 80 });
+    </script>
+    <script>
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    </script>
+    <script>
+    // Enable hover effect on mobile (touch) for cards and buttons
+    function enableTouchHover(selector) {
+      document.querySelectorAll(selector).forEach(function(el) {
+        el.addEventListener('touchstart', function() {
+          el.classList.add('hover-active');
+        });
+        el.addEventListener('touchend', function() {
+          el.classList.remove('hover-active');
+        });
+        el.addEventListener('touchcancel', function() {
+          el.classList.remove('hover-active');
+        });
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      enableTouchHover('.project-card');
+      enableTouchHover('.card');
+      enableTouchHover('.btn-primary');
+      enableTouchHover('.btn-outline-primary');
+    });
+    </script>
+  </body>
+</html> 
