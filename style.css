@@ -456,3 +456,52 @@ body:hover .cursor-dot, body:hover .cursor-outline {
 #aboutModal .bg-surface *, #about-modal .bg-surface * {
   will-change: auto;
 }
+
+.achievement-item {
+  background: var(--surface-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 1.25rem 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.achievement-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.achievement-item i {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+.achievement-item .achievement-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+.achievement-item .achievement-text h5 {
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.achievement-item .achievement-text .small {
+  margin-bottom: 0.25rem;
+}
+.achievement-item .achievement-text p {
+  margin-bottom: 0;
+  word-break: break-word;
+}
+@media (max-width: 600px) {
+  .achievement-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  .achievement-item .achievement-text {
+    align-items: center;
+  }
+}

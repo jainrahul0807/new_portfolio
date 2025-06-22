@@ -200,7 +200,7 @@ const achievements = [
   {
     icon: 'bi-trophy-fill',
     title: '68th Rank in TCS CodeVita',
-    issuer: ' TCS CodeVita',
+    issuer: 'TCS CodeVita',
     year: 'Season 12',
     description: ''
   },
@@ -234,9 +234,9 @@ function renderAchievements() {
   if (achievementsList) {
     achievementsList.innerHTML = achievements.map(item => `
       <div class="col-md-6">
-        <div class="achievement-item d-flex align-items-center bg-surface p-3 rounded-3">
+        <div class="achievement-item">
           <i class="bi ${item.icon} text-primary fs-1 me-3"></i>
-          <div>
+          <div class="achievement-text">
             <h5 class="fw-semibold">${item.title}</h5>
             <div class="small text-white">${item.issuer} | ${item.year}</div>
             <p class="mt-2">${item.description}</p>
@@ -328,6 +328,11 @@ function initParticles() {
 
 // Custom Cursor Logic
 function initCustomCursor() {
+    // Disable custom cursor on touch devices
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        document.querySelectorAll('.cursor-dot, .cursor-outline').forEach(el => el.style.display = 'none');
+        return;
+    }
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     let mouseX = 0, mouseY = 0;
@@ -335,7 +340,6 @@ function initCustomCursor() {
     let outlineX = 0, outlineY = 0;
 
     function animateCursor() {
-        // Smoothly interpolate the dot and outline positions
         dotX += (mouseX - dotX) * 0.35;
         dotY += (mouseY - dotY) * 0.35;
         outlineX += (mouseX - outlineX) * 0.18;
