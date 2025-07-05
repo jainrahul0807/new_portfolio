@@ -76,7 +76,7 @@ navLinks.forEach(link => {
 });
 
 // =====================
-// Contact Form Success Message
+// Contact Form Success Message & Character Counters
 // =====================
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
@@ -84,7 +84,33 @@ if (contactForm) {
     setTimeout(() => {
       document.getElementById('form-success').style.display = 'block';
       contactForm.reset();
+      // Reset character counters
+      document.querySelectorAll('.char-counter').forEach(counter => {
+        counter.textContent = '0/' + counter.textContent.split('/')[1];
+      });
     }, 1200);
+  });
+  
+  // Character counter functionality
+  const inputs = ['name', 'email', 'subject', 'message'];
+  inputs.forEach(inputId => {
+    const input = document.getElementById(inputId);
+    const counter = input.parentElement.querySelector('.char-counter');
+    const maxLength = input.maxLength;
+    
+    input.addEventListener('input', function() {
+      const currentLength = this.value.length;
+      counter.textContent = `${currentLength}/${maxLength}`;
+      
+      // Change color when approaching limit
+      if (currentLength > maxLength * 0.8) {
+        counter.style.color = '#f59e0b';
+      } else if (currentLength > maxLength * 0.9) {
+        counter.style.color = '#ef4444';
+      } else {
+        counter.style.color = '#666';
+      }
+    });
   });
 }
 
@@ -307,23 +333,114 @@ document.addEventListener('DOMContentLoaded', () => {
 // tsParticles Initialization
 function initParticles() {
     tsParticles.load("tsparticles", {
-        fpsLimit: 60,
+        fpsLimit: 30,
         particles: {
-            number: { value: 50, density: { enable: true, value_area: 800 } },
+            number: { 
+                value: 25,
+                density: { enable: true, value_area: 800 } 
+            },
             color: { value: "#38bdf8" },
             shape: { type: "circle" },
             opacity: { value: 0.3, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
             size: { value: 3, random: true, anim: { enable: false } },
             line_linked: { enable: true, distance: 150, color: "#818cf8", opacity: 0.2, width: 1 },
-            move: { enable: true, speed: 1, direction: "none", random: false, straight: false, out_mode: "out", attract: { enable: false } }
+            move: { 
+                enable: true, 
+                speed: 0.8,
+                direction: "none", 
+                random: false, 
+                straight: false, 
+                out_mode: "out", 
+                attract: { enable: false } 
+            },
+            life: {
+                duration: {
+                    sync: false,
+                    value: 20
+                },
+                count: 1
+            }
         },
         interactivity: {
             detect_on: "canvas",
-            events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-            modes: { grab: { distance: 140, line_opacity: 0.5 }, bubble: {}, repulse: {}, push: { particles_nb: 4 }, remove: {} }
+            events: { 
+                onhover: { enable: true, mode: "grab" }, 
+                onclick: { enable: true, mode: "push" }, 
+                resize: true 
+            },
+            modes: { 
+                grab: { distance: 140, line_opacity: 0.5 }, 
+                bubble: {}, 
+                repulse: {}, 
+                push: { particles_nb: 2 },
+                remove: {} 
+            }
         },
         retina_detect: true,
+        autoPlay: true,
+        pauseOnBlur: true,
+        pauseOnOutsideViewport: true,
+        fullScreen: {
+            enable: false,
+            zIndex: 0
+        }
     });
+    
+    setInterval(() => {
+        tsParticles.load("tsparticles", {
+            fpsLimit: 30,
+            particles: {
+                number: { 
+                    value: 25,
+                    density: { enable: true, value_area: 800 } 
+                },
+                color: { value: "#38bdf8" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false } },
+                line_linked: { enable: true, distance: 150, color: "#818cf8", opacity: 0.2, width: 1 },
+                move: { 
+                    enable: true, 
+                    speed: 0.8,
+                    direction: "none", 
+                    random: false, 
+                    straight: false, 
+                    out_mode: "out", 
+                    attract: { enable: false } 
+                },
+                life: {
+                    duration: {
+                        sync: false,
+                        value: 20
+                    },
+                    count: 1
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { 
+                    onhover: { enable: true, mode: "grab" }, 
+                    onclick: { enable: true, mode: "push" }, 
+                    resize: true 
+                },
+                modes: { 
+                    grab: { distance: 140, line_opacity: 0.5 }, 
+                    bubble: {}, 
+                    repulse: {}, 
+                    push: { particles_nb: 2 },
+                    remove: {} 
+                }
+            },
+            retina_detect: true,
+            autoPlay: true,
+            pauseOnBlur: true,
+            pauseOnOutsideViewport: true,
+            fullScreen: {
+                enable: false,
+                zIndex: 0
+            }
+        });
+    }, 30000);
 }
 
 // Custom Cursor Logic
